@@ -17,11 +17,11 @@
                     <section class="navbar__menu-home flex">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48.92 56.48" class="nav_logo-icon"> <title>Academlo Logo</title> <g> <g> <!-- <path d="M24.45,56.48,0,42.36V14.12L24.46,0,48.92,14.12V42.36ZM1.89,41.26l22.56,13L47,41.26v-26l-22.56-13-22.56,13Z"></path> -->
                             <path d="M28.58,15.39H25.16L35.78,36H31.49L20.67,15.71,8.23,38.82H18.94l3-5.43h-3.4l-1.47,2.54h-4l2.69-5.09H25.85l4.28,8H40.67ZM17.23,28.21l3.57-6.6,3.57,6.6Z" stroke= #34B0BE> </path> </g> </g> </svg>
-                        <p class="menu-home-store"> STORE</p> 
+                            <a href="#home"><p class="menu-home-store"> STORE</p></a>
                     </section>
                     <section class="navbar__menu-option flex">
-                        <p class="navbar__menu-option">Home</p>
-                        <p class="navbar__menu-option">Products</p>
+                        <a href="#home"><p class="navbar__menu-option">Home</p></a>
+                        <a href=""><p class="navbar__menu-option">Products</p></a>
                     </section>
                 </section>
 
@@ -40,8 +40,8 @@
 
         <section class="body">
 
-            <section class="body__home">
-                <section class="body__home-screen1">
+            <section id="home" class="body__home">
+                <section id= "home" class="body__home-screen1">
                     <section class="home__details flex">
                         <section class="home__details-item">
                             <section class="home__details-item-info flex">
@@ -57,25 +57,106 @@
                         </section>
                     </section>
                     <section class="home__products">
-                        <img src="./src/img/img/featured2.png" alt="Collections 2023">
+                        <img src="./src/img/img/home.png" alt="Collections 2023">
                     </section>
                 </section>
                 
             </section>
-
-            <section class="body__products">
+            
+            <section class="body__products flex">
                 <section class="product__search">
                     <section class="product__search-categories">
-                        <h3 class="categories-name"></h3>
-                        <p class="categories-details"></p>
-                        <!-- <hr class="categories-hr"> -->
+                        <h3 class="categories-name">Show All</h3>
+                        <p class="categories-details">Show all products</p>
+                    </section>
+                    <section class="product__search-categories">
+                        <h3 class="categories-name">Hoodies</h3>
+                        <p class="categories-details">Lorem ipsum dolor sit.</p>
+                    </section>
+                    <section class="product__search-categories">
+                        <h3 class="categories-name">Shirts</h3>
+                        <p class="categories-details">Lorem ipsum dolor sit.</p>
+                    </section>
+                    <section class="product__search-categories">
+                        <h3 class="categories-name">Sweatshirts</h3>
+                        <p class="categories-details">Lorem ipsum dolor sit.</p>
                     </section>
                 </section>
 
                 <section class="product__details">
                     <section class="product__details-img">
-                        <img src="./src/img/img/featured1.png" alt="Coat-00H1">
+                            <img src="./src/img/img/featured1.png" alt="Coat-00H1">
+                            <section class="product__details-img-details">
+                                <section class="product__details-img-details-title flex">
+                                    <h3 class="product__details-price"><i class='bx bxs-badge-dollar'></i>14.00</h3>
+                                    <p class="categories-details">Lorem.</p>
+                                </section>
+                                <section class="paragraph">
+                                    <h3 class="product__details-price-name">Hoodies</h3>
+                                </section>
+                            </section>
                     </section>
+                    <section class="product__details-img">
+                        <img src="./src/img/img/featured3.png" alt="Coat-00H1">
+                        <section class="product__details-img-details">
+                            <section class="product__details-img-details-title flex">
+                                <h3 class="product__details-price"><i class='bx bxs-badge-dollar'></i>24.00</h3>
+                                <p class="categories-details">Lorem.</p>
+                            </section>
+                            <section class="paragraph">
+                                <h3 class="product__details-price-name">Hoodies Rocky</h3>
+                            </section>
+                        </section>
+                    </section>
+                    <section class="product__details-img">
+                        <img src="./src/img/img/featured2.png" alt="Coat-00H1">
+                        <section class="product__details-img-details">
+                            <section class="product__details-img-details-title flex">
+                                <h3 class="product__details-price"><i class='bx bxs-badge-dollar'></i>24.00</h3>
+                                <p class="categories-details">Lorem.</p>
+                            </section>
+                            <section class="paragraph">
+                                <h3 class="product__details-price-name">Sweatshirt</h3>
+                            </section>
+                        </section>
+                    </section>
+
+                    <section class="product__details-img">
+                        <img src="./src/img/img/featured1.png" alt="Coat-00H1">
+                        <section class="product__details-img-details">
+                            <section class="product__details-img-details-title flex">
+                                <h3 class="product__details-price"><i class='bx bxs-badge-dollar'></i>14.00</h3>
+                                <p class="categories-details">Lorem.</p>
+                            </section>
+                            <section class="paragraph">
+                                <h3 class="product__details-price-name">Hoodies</h3>
+                            </section>
+                        </section>
+                </section>
+                <section class="product__details-img">
+                    <img src="./src/img/img/featured3.png" alt="Coat-00H1">
+                    <section class="product__details-img-details">
+                        <section class="product__details-img-details-title flex">
+                            <h3 class="product__details-price"><i class='bx bxs-badge-dollar'></i>24.00</h3>
+                            <p class="categories-details">Lorem.</p>
+                        </section>
+                        <section class="paragraph">
+                            <h3 class="product__details-price-name">Hoodies Rocky</h3>
+                        </section>
+                    </section>
+                </section>
+                <section class="product__details-img">
+                    <img src="./src/img/img/featured2.png" alt="Coat-00H1">
+                    <section class="product__details-img-details">
+                        <section class="product__details-img-details-title flex">
+                            <h3 class="product__details-price"><i class='bx bxs-badge-dollar'></i>24.00</h3>
+                            <p class="categories-details">Lorem.</p>
+                        </section>
+                        <section class="paragraph">
+                            <h3 class="product__details-price-name">Sweatshirt</h3>
+                        </section>
+                    </section>
+                </section>
                 </section>
             </section>
         </section>
