@@ -8,9 +8,10 @@
     --color2: #0081B4;
     --bg: #112B3C;
     --bgft: #082234;
-    --bg2: #cecfd4;
-    --z1: 10000;
+    --bg2: #EEF1FF;
+    --z1: 5000;
     --z2: 3000;
+    --z3: 10000;
     --dg: linear-gradient(180deg, rgba(17,43,60,1) 25%, rgba(23,99,2,1) 100%);
 }
 
@@ -495,11 +496,13 @@ html {
     font-size: 2rem;
     color: white;
     position: absolute;
-    z-index: var(--z1);
+    z-index: var(--z3);
     top: 2px;
     left: 4px;
     cursor: pointer;
     text-shadow: -3px 2px 2px black;
+
+
 }
 
 .contentCart__show {

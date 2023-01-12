@@ -27,6 +27,7 @@ let items = [
 {
     const iconCart = document.querySelector('.bx-shopping-bag');
     const modeLight = document.querySelector('.bx-moon');
+    const iconX = document.querySelector('.bx-x');
     const contentCart = document.querySelector(".contentCart");
     const bodyContainer = document.querySelector(".container");
     const menuStore = document.querySelector(".menu-home-store");
@@ -35,6 +36,10 @@ let items = [
     const footer = document.querySelector('.footer');
     const footerSocial = document.querySelector('.footer__information-social');
 
+
+    iconX.addEventListener('click', () => {
+        contentCart.classList.toggle("contentCart__show")
+    })
 
     iconCart.addEventListener('click',function(){
         contentCart.classList.toggle("contentCart__show")
@@ -61,6 +66,7 @@ let items = [
     modeLight.addEventListener('click',function(){
         footerSocial.classList.toggle("color__fontsI")
     })
+    
 }
 
 const products = document.querySelector('.product__details');
