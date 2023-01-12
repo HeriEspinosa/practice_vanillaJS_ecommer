@@ -88,6 +88,7 @@ html {
     padding-left: 0.3rem ;
     text-decoration: none;
     color: var(--bg2);
+    text-shadow: -1px 2px 2px black;
 }
 
 .navbar__menu-option > a {
@@ -220,7 +221,7 @@ html {
 
 .product__search-categories {
     border-left: 2px solid var(--fn2);
-    font-size: 0.7rem;
+    font-size: 0.9rem;
     text-align: center;
     padding: 1rem;
 
@@ -441,6 +442,7 @@ html {
     top: 2px;
     left: 4px;
     cursor: pointer;
+    text-shadow: -3px 2px 2px black;
 }
 
 .contentCart__show {
@@ -477,7 +479,7 @@ html {
     display: flex;
     flex-direction: column;
     cursor: pointer;
-    
+
 }
 
 /* total del carrito */

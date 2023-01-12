@@ -103,7 +103,7 @@ function printProducts(){
 
     items.forEach(function({id, name, stock, price, urlImage}){
         html += `
-        <section class="product__details-img">
+        <section class="product__details-img filter-${id}">
         <img src="${urlImage}" alt"${name}">
         <section class="product__details-img-details">
             <section class="product__details-img-details-title flex">
@@ -225,3 +225,16 @@ cartTotal.addEventListener('click', function(e) {
 
 printProducts();
 printTotalCart();
+
+
+// filtrado de products:
+
+mixitup(".product__details", {
+    selectors: {
+        target: '.product__details-img'
+    },
+    animation: {
+        duration: 300
+    }
+});
+
