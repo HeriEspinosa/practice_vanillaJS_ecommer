@@ -26,11 +26,17 @@ let items = [
 // click del carrito para abrirlo y ocultarlo
 {
     const iconCart = document.querySelector('.bx-shopping-bag');
+    const iconX = document.querySelector('.bx-x');
     const contentCart = document.querySelector(".contentCart");
+
+    iconX.addEventListener('click', () => {
+        contentCart.classList.toggle("contentCart__show")
+    })
 
     iconCart.addEventListener('click',function(){
         contentCart.classList.toggle("contentCart__show")
     })
+    
 }
 
 const products = document.querySelector('.product__details');
