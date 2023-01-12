@@ -60,7 +60,7 @@ function printTotalCart() {
 
 
     cartTotal.innerHTML = `
-        <h3>Total to pay ${sum}</h3>
+        <h3>Total to pay <i class='bx bxs-badge-dollar'></i> ${sum}.00</h3>
         <br/>
         <button class="btn btn__buy">Buy</button>
 
@@ -81,8 +81,8 @@ function printProductsInCart() {
 
                 <section class="product__info">
                     <p>${name}</p>
-                    <p>${price}.00</p>
-                    <p>Amount: ${amount}</p>
+                    <p><i class='bx bxs-badge-dollar'></i>${price}.00</p>
+                    <p>amount: ${amount}</p>
                 </section>
 
                 <section class="product_options" id="${id}">
