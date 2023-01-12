@@ -36,9 +36,28 @@ let items = [
 const products = document.querySelector('.product__details');
 const cartProduct = document.querySelector('.cartProduct');
 const cartTotal = document.querySelector('.cartTotal');
+const cartAmount =document.querySelector('.cartAmount');
 
 let objCart = {};
 
+function printCartAmount() {
+    let sum = 0;
+
+    const arrayCart = Object.values(objCart);
+
+    if(!arrayCart.length) {
+        cartAmount.style.display = "none";
+        return;
+    };
+
+    cartAmount.style.display = "inline-block";
+
+    arrayCart.forEach(function ({ amount }){
+        sum += amount;
+    });
+
+    cartAmount.textContent = sum;
+}
 
 function printTotalCart() {
     const arrayCart = Object.values(objCart);
@@ -136,7 +155,16 @@ products.addEventListener('click', function(e){
 
         //logica para el carrito
         if(objCart[id]){
-            objCart[id].amount++;
+            let findProduct = items.find(function (item) {
+                return item.id === id;
+            });
+    
+            if (findProduct.stock === objCart[id].amount) {
+                alert("Sorry, this product is not available in stock")
+            } else {
+                objCart[id].amount++;
+            }
+
         }else{
             objCart[id] = {
                 ...findProduct,
@@ -153,6 +181,7 @@ products.addEventListener('click', function(e){
     
     printProductsInCart();
     printTotalCart()
+    printCartAmount()
 })
 
 cartProduct.addEventListener('click', function (e) {
@@ -191,11 +220,12 @@ cartProduct.addEventListener('click', function (e) {
 
     printProductsInCart();
     printTotalCart()
+    printCartAmount()
 })
 
 cartTotal.addEventListener('click', function(e) {
     if(e.target.classList.contains("btn__buy")) {
-        const res = confirm("Comfirm the purchase")
+        const res = confirm("Confirm the purchase")
 
         if (!res) return;
         
@@ -219,13 +249,14 @@ cartTotal.addEventListener('click', function(e) {
         printProducts();
         printProductsInCart()
         printTotalCart();
+        printCartAmount()
     }
 });
 
 
 printProducts();
 printTotalCart();
-
+printCartAmount()
 
 // filtrado de products:
 
