@@ -5,9 +5,10 @@
     --fn1: gainsboro;
     --fn2: #176302;
     --fn3: rgb(13,14,13);
+    --color2: #0081B4;
     --bg: #112B3C;
     --bgft: #082234;
-    --bg2: #EEF1FF;
+    --bg2: #cecfd4;
     --z1: 10000;
     --z2: 3000;
     --dg: linear-gradient(180deg, rgba(17,43,60,1) 25%, rgba(23,99,2,1) 100%);
@@ -354,7 +355,24 @@ html {
 }
 .color__fonts {
     color: var(--fn3);
-    /* container, menu-home-store, navbar__menu-option, navbar__menu-option, home__details-item, */
+    font-weight: 600;
+    /* container, menu-home-store, navbar__menu-option, home__details-item, */
+}
+
+.color__fontsS p,
+.color__fontsA a > p,
+.color__fontsI i {
+    color: var(--fn3);
+    font-weight: 600;
+}
+
+.color__fonts-navbar {
+    color: var(--fn3);
+    font-weight: 900;
+    font-size: 1.2rem;
+    padding-left: 0.3rem ;
+    text-decoration: none;
+    text-shadow: -1px 2px 2px lightgrey;
 }
 
 

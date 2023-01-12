@@ -26,10 +26,40 @@ let items = [
 // click del carrito para abrirlo y ocultarlo
 {
     const iconCart = document.querySelector('.bx-shopping-bag');
+    const modeLight = document.querySelector('.bx-moon');
     const contentCart = document.querySelector(".contentCart");
+    const bodyContainer = document.querySelector(".container");
+    const menuStore = document.querySelector(".menu-home-store");
+    const menuNavbar = document.querySelector(".navbar__menu-option");
+    const homeDetails = document.querySelector(".home__details-item");
+    const footer = document.querySelector('.footer');
+    const footerSocial = document.querySelector('.footer__information-social');
+
 
     iconCart.addEventListener('click',function(){
         contentCart.classList.toggle("contentCart__show")
+    })
+
+    modeLight.addEventListener('click',function(){
+        bodyContainer.classList.toggle("color__background")
+    })
+    modeLight.addEventListener('click',function(){
+        bodyContainer.classList.toggle("color__fonts")
+    })
+    modeLight.addEventListener('click',function(){
+        menuStore.classList.toggle("color__fonts-navbar")
+    })
+    modeLight.addEventListener('click',function(){
+        menuNavbar.classList.toggle("color__fontsA")
+    })
+    modeLight.addEventListener('click',function(){
+        homeDetails.classList.toggle("color__fonts")
+    })
+    modeLight.addEventListener('click',function(){
+        footer.classList.toggle("color__fontsS")
+    })
+    modeLight.addEventListener('click',function(){
+        footerSocial.classList.toggle("color__fontsI")
     })
 }
 
@@ -37,6 +67,7 @@ const products = document.querySelector('.product__details');
 const cartProduct = document.querySelector('.cartProduct');
 const cartTotal = document.querySelector('.cartTotal');
 const cartAmount =document.querySelector('.cartAmount');
+
 
 let objCart = {};
 
