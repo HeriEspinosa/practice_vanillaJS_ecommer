@@ -11,15 +11,16 @@ let items = [
         name: "Hoodies Rocky",
         stock: 7,
         price: 14,
-        urlImage: "src/img/img/featured2.png"
+        urlImage: "src/img/img/featured3.png"
     },
     {
         id: "2",
         name: "Swatshirts",
         stock: 10,
         price: 24,
-        urlImage: "src/img/img/featured3.png"
+        urlImage: "src/img/img/featured2.png"
     },
+    
 ]
 
 // click del carrito para abrirlo y ocultarlo
@@ -32,7 +33,7 @@ let items = [
     })
 }
 
-const products = document.querySelector('.products');
+const products = document.querySelector('.product__details');
 const cartProduct = document.querySelector('.cartProduct');
 const cartTotal = document.querySelector('.cartTotal');
 
@@ -60,6 +61,7 @@ function printTotalCart() {
 
     cartTotal.innerHTML = `
         <h3>Total to pay ${sum}</h3>
+        <br/>
         <button class="btn btn__buy">Buy</button>
 
     `
@@ -72,23 +74,23 @@ function printProductsInCart() {
 
     arrayCart.forEach(function({id, name, price, urlImage, amount}){
         html += `
-            <div class="product">
-                <div class="product__img">
-                <img src="${urlImage}" alt"${name}" />
-                </div>
+            <section class="product">    
+                <section class="product__img">
+                    <img src="${urlImage}" alt"${name}" />
+                </section>
 
-                <div class="product__info">
-                <p>${name}</p>
-                <p>${price}</p>
-                <p>Amount: ${amount}</p>
-                </div>
+                <section class="product__info">
+                    <p>${name}</p>
+                    <p>${price}.00</p>
+                    <p>Amount: ${amount}</p>
+                </section>
 
-                <div class="product_options" id="${id}">
-                <i class='bx bx-minus'></i>
-                <i class='bx bx-plus'></i>
-                <i class='bx bx-trash' ></i>
-                </div>
-            </div>
+                <section class="product_options" id="${id}">
+                    <i class='bx bx-minus'></i>
+                    <i class='bx bx-plus'></i>
+                    <i class='bx bx-trash' ></i>
+                </section>
+            </section>
         `
     });
     //for
@@ -101,22 +103,22 @@ function printProducts(){
 
     items.forEach(function({id, name, stock, price, urlImage}){
         html += `
-            <div class="product">
-                <div class="product__img">
-                <img src="${urlImage}" alt"${name}" />
-                </div>
-
-                <div class="product__info">
-                <p>Name: ${name}</p>
-                <p>Stock: ${stock}</p>
-                <p>Price: ${price}</p>
-                </div>
-
-                <div class="product_options" id="${id}">
-                    <button class="btn btn__add">Add to cart</button>
-                </div>
-            </div>
-        `
+        <section class="product__details-img">
+        <img src="${urlImage}" alt"${name}">
+        <section class="product__details-img-details">
+            <section class="product__details-img-details-title flex">
+                <h3 class="product__details-price"><i class='bx bxs-badge-dollar'></i>${price}.00</h3>
+                <p class="categories-details"><small> | Stock: ${stock} </small></p>
+            </section>
+            <section class="paragraph">
+                <h3 class="product__details-price-name">${name}</h3>
+            </section>
+        </section>
+        <section class="product_options" id="${id}">
+            <button class="btn btn__add">ADD TO CART</button>
+        </section>
+    </section>
+    `
     });
 
     products.innerHTML = html;

@@ -33,6 +33,7 @@ html {
 .container {
     background-color: var(--bg);
     min-width: 100%;
+    min-height: 100vh;
     display: grid;
     color: var(--fn);
     overflow: hidden;
@@ -49,10 +50,17 @@ html {
     justify-content:space-between;
 }
 
+.header,
+.body__home-screen1,
+.home__details,
+.home__products > img,
+.body__products,
+.product__details-img
+{margin: 0 auto;}
+
 .header {
     width: 100%;
     position: fixed;
-    margin: 0 auto;
     z-index: var(--z1);
 }
 
@@ -108,13 +116,11 @@ html {
     padding: 6rem 2.5rem;
     
     max-width: 935px;
-    margin: 0 auto;
 }
 
 .home__details {
     align-items: center;
     gap: 1rem;
-    margin: 0 auto;
     padding-right: 1rem;
     font-size: 1rem;
     color: var(--fn1);
@@ -181,7 +187,6 @@ html {
 .home__products > img {
     width: 310px;
     height: 320px;
-    margin: 0 auto;
 
     cursor: pointer;
     animation: movimiento linear 2.5s infinite;
@@ -197,12 +202,13 @@ html {
     flex-direction: column;
     justify-content: center;
     padding: 1rem;
+    max-width: 1300px;
 }
 
 .product__search {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    padding: 1rem 3.5rem;
+    padding: 1rem 3.2rem;
     gap: 1rem;
 }
 
@@ -214,9 +220,9 @@ html {
 
 .product__search-categories {
     border-left: 2px solid var(--fn2);
-    font-size: 1rem;
+    font-size: 0.7rem;
     text-align: center;
-    padding: 1.2rem;
+    padding: 1rem;
 
     cursor: pointer;
 }
@@ -234,15 +240,29 @@ html {
 }
 
 .product__details {
+    
     width: 100%;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
-    padding: 2rem 0rem;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    padding: 0rem 5rem 0rem 5rem;
+}
+
+.product__details-img {
+    background: var(--dg);
+    width: 205px;
+    margin-top: 2rem;
+    cursor: pointer;
+    border-radius: 10px;    
+}
+
+.product__details-img img:hover {
+    transform: scale(1.04);
+    animation: mhover linear 2.5s infinite;
 }
 
 .product__details-img:hover {
     transform: scale(1.04);
-    animation: mhover linear 2.5s infinite;
+    transition: transform 0.5s;
 }
 
 @keyframes mhover {
@@ -256,20 +276,18 @@ html {
     padding: 1rem;
 }
 
-.product__details-img {
-    background: var(--dg);
-    width: 180px;
-    margin-top: 2rem;
-    cursor: pointer;
-    border-radius: 10px;
-}
-
-.product__details-img img {
-    width: 180px;
-}
-
 .product__details-img-details-title {
     font-size: 1.2rem;
+}
+
+.product__details-img-details-title h3 {
+    padding: 0 0.5rem 0.2rem 0;
+}
+
+.product__details-img-details-title p {
+    font-size: 0.8rem;
+    color: var(--fn1);
+    letter-spacing: 1px;
 }
 
 .footer {
@@ -314,7 +332,7 @@ html {
 }
 
 
-
+/* Light and Dark Mode */
 
 .color__background {
     background-color: var(--bg2);
@@ -324,38 +342,34 @@ html {
     color: var(--fn3);
     /* container, menu-home-store, navbar__menu-option, navbar__menu-option, home__details-item, */
 }
+
+
+/* -----------css javascript------------- */
+
 .color__background-navbar {
     background: var(--bg);
     opacity: 0.98;
 }
 
-
-/* -----------css javascript------------- */
-
-/* seccion general de div class products */
-.products *{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-.products img{
-    width: 100%;
-    display: block;
-}
-
 /* seccion del boton de add to cart */
+
+.product_options {
+    padding: 0.5rem;
+}
+
 .btn {
-    padding: 10px, 20px;
-    border: none;
-    border-radius: 5px;
+    font-size: 1rem;
     font-weight: bold;
+    color: var(--fn);
+
+    border: none;
+    border-radius: 4px;
     cursor: pointer;
 }
 
 .btn__add,
 .btn__buy {
-    background-color: lightblue;
+    background-color: var(--bgft);
     width: 100%;
     padding: 0.5rem;
 }
@@ -377,28 +391,56 @@ html {
 }
 
 .product {
-    background-color: red;
     padding: 1rem;
     border-radius: 1rem;
     background-color: var(--bgft);
     display: flex;
     flex-direction: column;
+    text-align: center;
+    justify-content: center;
+}
+
+.product__info {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    font-size: 1rem;
+}
+
+.product_options {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    gap: 0.5rem;
 }
 
 /* contenido del carrito */
 
 .contentCart {
-    height: calc(100vh - 50px);
+    height: calc(100vh);
     width: 30vw;
-    top: 60px;
-    right: 0;
+    top: 0px;
+    right: 0px;
     position: fixed;
     background-color: var(--bgft);
     border-radius: 1rem;
-    padding: 1rem;
+    padding: 1.5rem;
 
+    z-index: var(--z1);
     transform: translate(100%);
     transition: transform 0.5s;
+}
+
+.contentCart__close {
+    font-size: 2rem;
+    color: white;
+    position: absolute;
+    z-index: var(--z1);
+    top: 2px;
+    left: 4px;
+    cursor: pointer;
 }
 
 .contentCart__show {
@@ -407,10 +449,12 @@ html {
 
 .cartProduct {
     height: 80%;
-    background-color: red;
+    background-color: var(--bg);
     border-top-left-radius: 1rem;
     border-top-right-radius: 1rem;
-    padding: 0.5rem;
+    padding: 1rem;
+    margin-top: 0.2rem;
+    position: relative;
 
     display: flex;
     flex-direction: column;
@@ -422,26 +466,24 @@ html {
 /* contenido productos agregados al carrito */
 
 .cartProduct .product {
-    background-color: rgb(36, 36, 102);
+    background-color: var(--fn2);
     flex-direction: row;
     gap: 1rem;
     text-align: left;
     justify-content: space-between;
 }
 
-.cartProduct .product .product__im {
-    width: 30%;
-}
-
 .cartProduct .product .product_options {
     display: flex;
     flex-direction: column;
+    cursor: pointer;
+    
 }
 
 /* total del carrito */
 .cartTotal {
     height: 20%;
-    background-color: green;
+    background: var(--dg);
     padding: 1rem;
     display: flex;
     justify-content: center;
@@ -449,5 +491,9 @@ html {
     flex-direction: column;
     border-bottom-left-radius: 1rem;
     border-bottom-right-radius: 1rem;
+}
+
+.btn__buy {
+    box-shadow: 3px 3px 3px black;
 }
 
