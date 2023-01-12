@@ -64,7 +64,10 @@ function printTotalCart() {
     //cuando no tienes nada en el carrito
     if(!arrayCart.length) {
         cartTotal.innerHTML = `
-            <h3>Your cart is empty</h3>
+        <section class="cartProductempty flex">
+            <img src="./src/img/img/empty-cart.png" alt="Empty">
+        </section>
+        <h3>Your cart is empty</h3>
         `;
 
         return;
