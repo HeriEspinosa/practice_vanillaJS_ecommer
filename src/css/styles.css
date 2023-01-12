@@ -580,6 +580,9 @@ html {
     }
 
 
+    .cartProduct {
+        height: 70%;
+    }
 
     .contentCart {
         width: 70vw;
