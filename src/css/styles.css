@@ -17,6 +17,29 @@
     --dg1: linear-gradient(180deg, rgba(17,43,60,1) 25%, rgba(0,129,180,1) 100%);
 }
 
+
+/* Light and Dark Mode */
+
+.lightMode {
+    --bg: var(--bg2);
+    --fn2:var(--color2);
+    --fn: var(--fn3);
+    --fn1:var(--fn3);
+    --bgft:var(--color2);
+    --dg:var(--dg1);
+}
+
+
+.color__fonts-navbar {
+    color: var(--fn3);
+    font-weight: 900;
+    font-size: 1.2rem;
+    padding-left: 0.3rem ;
+    text-decoration: none;
+    text-shadow: -1px 1px 1px lightgrey;
+}
+
+
 * {
     padding: 0;
     margin: 0;
@@ -77,7 +100,7 @@ html {
 }
 
 .header__navbar-animation {
-    background-color: var(--fn3);
+    background-color: var(--bg);
     height: 60px;
 }
 
@@ -101,8 +124,8 @@ html {
     font-size: 1.2rem;
     padding-left: 0.3rem ;
     text-decoration: none;
-    color: var(--bg2);
-    text-shadow: -1px 2px 2px black;
+    color: var(--fn);
+    text-shadow: -1px 1px 2px var(--fn2);
 }
 
 .navbar__menu-option > a {
@@ -157,7 +180,7 @@ html {
 
 @keyframes price {
     0% { transform: rotate(0);}
-    30% {transform: rotate(3deg);}
+    30% {transform: rotate(4deg);}
     80% { transform: scale(1.03);}
 }
 
@@ -173,6 +196,11 @@ html {
 
     border-radius: 3px;
     cursor: pointer;
+    
+}
+
+.home__details-item-buttons button:nth-child(2){
+    color: var(--bg2);
     
 }
 
@@ -318,7 +346,6 @@ html {
 .footer__information {
     text-align: center;
     margin-bottom: 2rem;
-    text-decoration: none;
 }
 
 .footer__information > p {
@@ -332,6 +359,13 @@ html {
     gap: 1rem;
     font-size: 30px;
     color: var(--fn1);
+    animation: social linear 3s infinite;
+}
+
+@keyframes social {
+    0% { transform: rotate(0);}
+    30% {transform: rotate(3deg);}
+    80% { transform: scale(1.07);}
 }
 
 .footer__information:nth-child(2) p,
@@ -346,62 +380,18 @@ html {
 
 .footer__bottom {
     background-color: var(--bgft);
-    padding: 3rem;
+    padding: 2rem;
     text-align: center;
 }
 
 .footer__bottom > p {
-    padding-top: 3rem;
-    color: var(--fn2);
+    padding-top: 2rem;
+    color: var(--bg2);
 }
 
 .footer__bottom > hr {
     opacity: 0.3;
 }
-
-
-/* Light and Dark Mode */
-
-.color__background {
-    background-color: var(--bg2);
-}
-.color__background1 {
-    background-color: var(--bg3);
-}
-.color__background2 {
-    background: var(--color2);
-}
-
-.color__background_dg > section {
-    background: var(--dg1);
-    color: var(--dg1);
-}
-
-.color__background_dg1 {
-    background: var(--dg1);
-    color: var(--dg1);
-}
-
-
-.color__fonts,
-.color__fontsS p,
-.color__fontsA a > p,
-.color__fontsI i,
-.color__fonts section p{
-    color: var(--color2);
-    font-weight: 600;
-}
-
-
-.color__fonts-navbar {
-    color: var(--fn3);
-    font-weight: 900;
-    font-size: 1.2rem;
-    padding-left: 0.3rem ;
-    text-decoration: none;
-    text-shadow: -1px 1px 1px lightgrey;
-}
-
 
 
 /* -----------css javascript------------- */
@@ -436,8 +426,6 @@ html {
     padding-top: 5px;
 }
 
-
-
 .product_options {
     padding: 0.5rem;
 }
@@ -445,7 +433,7 @@ html {
 .btn {
     font-size: 1rem;
     font-weight: bold;
-    color: var(--fn);
+    color: var(--bg2);
 
     border: none;
     border-radius: 4px;
@@ -457,6 +445,7 @@ html {
     background-color: var(--bgft);
     width: 100%;
     padding: 0.5rem;
+    box-shadow: 3px 3px 3px black;
 }
 
 .btn__su {
@@ -465,14 +454,11 @@ html {
     cursor: no-drop;
 }
 
-
 .div__container{
     padding: 1rem;
     max-width: 1024px;
     margin: 0 auto;
 }
-
-
 
 .products{
     display: grid;
@@ -508,8 +494,6 @@ html {
     gap: 0.4rem;
 }
 
-
-
 .contentCart {
     height: calc(100vh);
     width: 320px;
@@ -527,7 +511,7 @@ html {
 
 .contentCart__close {
     font-size: 2rem;
-    color: white;
+    color: var(--bg2);
     position: absolute;
     z-index: var(--z3);
     top: 2px;
@@ -558,16 +542,15 @@ html {
 
 .cartProductempty {
     height: 100%;
-    width: 90%;
+    width: 100%;
     align-items: center;
     justify-content: center;
     position: absolute;
 
-    top: -30px;
+    top: 0px;
     z-index: var(--z1);
+    background: var(--dg);
 }
-
-
 
 .product__img img {
     width: 100px;
@@ -588,7 +571,6 @@ html {
 
 }
 
-
 .cartTotal {
     background: var(--dg);
     height: 20%;
@@ -602,8 +584,9 @@ html {
 }
 
 .cartTotal h3 {
-    color: var(--fn);
+    color: var(--bg2);
     font-weight: 900;
+    z-index: var(--z1);
 }
 
 .btn__buy {
@@ -619,7 +602,6 @@ html {
     .body__home-screen1 {
         grid-template-columns: 1fr;
         grid-template-rows: 1fr 1fr;
-
         padding: 6rem 0rem 4rem 2rem;
     }
 
@@ -646,7 +628,6 @@ html {
     .product__search-categories {
         border-left: 2px solid var(--fn2);
         font-size: 0.9rem;
-    
         cursor: pointer;
     }
     

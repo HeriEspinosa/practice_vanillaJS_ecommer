@@ -27,13 +27,25 @@ items = JSON.parse(localStorage.getItem("items")) || items;
 let objCart = JSON.parse(localStorage.getItem("objCart")) || {};
 
 
-// click del carrito para abrirlo y ocultarlo y el modo dark y light
 const iconCart = document.querySelector('.bx-shopping-bag');
 const modeLight = document.querySelector('.bx-moon');
 const iconX = document.querySelector('.bx-x');
 const navbarAnimation = document.querySelector('.header__navbar');
+const contentCart = document.querySelector(".contentCart");
+const bodyContainer = document.querySelector(".container");
 
-const S2 = window.addEventListener("scroll", () => {
+iconX.addEventListener('click', () => {
+    contentCart.classList.toggle("contentCart__show")
+})
+iconCart.addEventListener('click',function(){
+    contentCart.classList.toggle("contentCart__show")
+})
+
+modeLight.addEventListener('click',function(){
+    bodyContainer.classList.toggle("lightMode")
+})
+
+const S = window.addEventListener("scroll", () => {
     if (window.scrollY > 60) {
         navbarAnimation.classList.add('header__navbar-animation');
     } else {
@@ -41,71 +53,8 @@ const S2 = window.addEventListener("scroll", () => {
     }
 });
 
-
-function darkMode(iconCart, modeLight, iconX){
     
-    const contentCart = document.querySelector(".contentCart");
-    const bodyContainer = document.querySelector(".container");
-    const menuStore = document.querySelector(".menu-home-store");
-    const menuNavbar = document.querySelector(".navbar__menu-option");
-    const homeDetails = document.querySelector(".home__details-item");
-    const footer = document.querySelector('.footer');
-    const footerSocial = document.querySelector('.footer__information-social');
-    const footerBottom = document.querySelector('.footer__bottom');
-    const homeProducts = document.querySelector('.home__products');
-    const discover = document.querySelector('.discover');
-    const productDetailsImg = document.querySelector('.product__details');
-    const cartTotal = document.querySelector('.contentCart');
 
-    iconX.addEventListener('click', () => {
-        contentCart.classList.toggle("contentCart__show")
-    })
-    iconCart.addEventListener('click',function(){
-        contentCart.classList.toggle("contentCart__show")
-    })
-
-    modeLight.addEventListener('click',function(){
-        bodyContainer.classList.toggle("color__background")
-    })
-    modeLight.addEventListener('click',function(){
-        bodyContainer.classList.toggle("color__fonts")
-    })
-    modeLight.addEventListener('click',function(){
-        menuStore.classList.toggle("color__fonts-navbar")
-    })
-    modeLight.addEventListener('click',function(){
-        menuNavbar.classList.toggle("color__fontsA")
-    })
-    modeLight.addEventListener('click',function(){
-        homeDetails.classList.toggle("color__fonts")
-    })
-    modeLight.addEventListener('click',function(){
-        footer.classList.toggle("color__background1")
-    })
-    modeLight.addEventListener('click',function(){
-        footerBottom.classList.toggle("color__background1")
-    })
-    modeLight.addEventListener('click',function(){
-        footer.classList.toggle("color__fonts")
-    })
-    modeLight.addEventListener('click',function(){
-        footerSocial.classList.toggle("color__fontsI")
-    })
-    modeLight.addEventListener('click',function(){
-        homeProducts.classList.toggle("color__background2")
-    })
-    modeLight.addEventListener('click',function(){
-        discover.classList.toggle("color__background2")
-    })
-    modeLight.addEventListener('click',function(){
-        productDetailsImg.classList.toggle("color__background_dg")
-    })
-    modeLight.addEventListener('click',function(){
-        cartTotal.classList.toggle("color__background_dg1")
-    })
-};
-
-darkMode(iconCart, modeLight, iconX);
 
 const products = document.querySelector('.product__details');
 const cartProduct = document.querySelector('.cartProduct');
@@ -348,4 +297,3 @@ mixitup(".product__details", {
         duration: 300
     }
 });
-
