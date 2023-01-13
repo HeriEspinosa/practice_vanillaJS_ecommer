@@ -75,7 +75,7 @@ const cartTotal = document.querySelector('.cartTotal');
 const cartAmount =document.querySelector('.cartAmount');
 
 
-let objCart = {};
+let objCart = JSON.parse(localStorage.getItem("objCart")) || {};
 
 function printCartAmount() {
     let sum = 0;
