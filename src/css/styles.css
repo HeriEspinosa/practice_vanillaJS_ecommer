@@ -9,6 +9,7 @@
     --bg: #112B3C;
     --bgft: #082234;
     --bg2: #EEF1FF;
+    --bg3: #03b2f71a;
     --z1: 5000;
     --z2: 3000;
     --z3: 10000;
@@ -355,7 +356,7 @@ html {
     background-color: var(--bg2);
 }
 .color__background1 {
-    background-color: var(--fn1);
+    background-color: var(--bg3);
 }
 .color__background2 {
     background: var(--color2);
