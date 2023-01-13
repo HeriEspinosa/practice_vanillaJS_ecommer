@@ -72,8 +72,18 @@ html {
     justify-content: space-between;
     align-items: center;
     padding: 0.5rem;
-    height: 5rem;
-    
+
+    transition: height 0.5s background-color 0.5s;
+}
+
+.header__navbar-animation {
+    background-color: var(--fn3);
+    height: 60px;
+}
+
+.header__navbar-animation2 {
+    background-color: var(--color2);
+    height: 60px;
 }
 
 .navbar__menu-home {
@@ -378,9 +388,10 @@ html {
 .color__fontsA a > p,
 .color__fontsI i,
 .color__fonts section p{
-    color: var(--fn3);
+    color: var(--color2);
     font-weight: 600;
 }
+
 
 .color__fonts-navbar {
     color: var(--fn3);
@@ -388,7 +399,7 @@ html {
     font-size: 1.2rem;
     padding-left: 0.3rem ;
     text-decoration: none;
-    text-shadow: -1px 2px 2px lightgrey;
+    text-shadow: -1px 1px 1px lightgrey;
 }
 
 

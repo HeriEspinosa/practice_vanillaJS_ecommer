@@ -23,12 +23,24 @@ let items = [
     
 ]
 
+items = JSON.parse(localStorage.getItem("items")) || items;
+let objCart = JSON.parse(localStorage.getItem("objCart")) || {};
 
 
 // click del carrito para abrirlo y ocultarlo y el modo dark y light
 const iconCart = document.querySelector('.bx-shopping-bag');
 const modeLight = document.querySelector('.bx-moon');
 const iconX = document.querySelector('.bx-x');
+const navbarAnimation = document.querySelector('.header__navbar');
+
+const S2 = window.addEventListener("scroll", () => {
+    if (window.scrollY > 60) {
+        navbarAnimation.classList.add('header__navbar-animation');
+    } else {
+        navbarAnimation.classList.remove('header__navbar-animation');
+    }
+});
+
 
 function darkMode(iconCart, modeLight, iconX){
     
@@ -44,8 +56,6 @@ function darkMode(iconCart, modeLight, iconX){
     const discover = document.querySelector('.discover');
     const productDetailsImg = document.querySelector('.product__details');
     const cartTotal = document.querySelector('.contentCart');
-    
-
 
     iconX.addEventListener('click', () => {
         contentCart.classList.toggle("contentCart__show")
@@ -90,12 +100,9 @@ function darkMode(iconCart, modeLight, iconX){
     modeLight.addEventListener('click',function(){
         productDetailsImg.classList.toggle("color__background_dg")
     })
-
     modeLight.addEventListener('click',function(){
         cartTotal.classList.toggle("color__background_dg1")
     })
-    
-    localStorage.setItem("objCart", JSON.stringify(objCart));
 };
 
 darkMode(iconCart, modeLight, iconX);
@@ -106,8 +113,6 @@ const cartTotal = document.querySelector('.cartTotal');
 const cartAmount =document.querySelector('.cartAmount');
 
 
-items = JSON.parse(localStorage.getItem("items")) || items;
-let objCart = JSON.parse(localStorage.getItem("objCart")) || {};
 
 printProductsInCart();
 
@@ -324,6 +329,7 @@ cartTotal.addEventListener('click', function(e) {
         printProductsInCart();
         printTotalCart();
         printCartAmount();
+        darkMode(iconCart, modeLight, iconX);
     };
 });
 
