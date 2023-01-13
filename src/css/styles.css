@@ -425,7 +425,7 @@ html {
     padding-top: 5px;
 }
 
-/* seccion del boton de add to cart */
+
 
 .product_options {
     padding: 0.5rem;
@@ -447,7 +447,13 @@ html {
     width: 100%;
     padding: 0.5rem;
 }
-/* seccion de div class container */
+
+.btn__su {
+    width: 100%;
+    background-color: #000;
+    cursor: no-drop;
+}
+
 
 .div__container{
     padding: 1rem;
@@ -455,7 +461,7 @@ html {
     margin: 0 auto;
 }
 
-/* seccion de div class products */
+
 
 .products{
     display: grid;
@@ -491,7 +497,7 @@ html {
     gap: 0.4rem;
 }
 
-/* contenido del carrito */
+
 
 .contentCart {
     height: calc(100vh);
@@ -550,7 +556,7 @@ html {
     z-index: var(--z1);
 }
 
-/* contenido productos agregados al carrito */
+
 
 .product__img img {
     width: 100px;
@@ -571,7 +577,7 @@ html {
 
 }
 
-/* total del carrito */
+
 .cartTotal {
     background: var(--dg);
     height: 20%;
