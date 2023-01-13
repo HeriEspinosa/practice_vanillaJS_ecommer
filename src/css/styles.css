@@ -361,8 +361,15 @@ html {
 .color__background2 {
     background: var(--color2);
 }
+
 .color__background_dg > section {
     background: var(--dg1);
+    color: var(--dg1);
+}
+
+.color__background_dg1 {
+    background: var(--dg1);
+    color: var(--dg1);
 }
 
 
@@ -568,8 +575,8 @@ html {
 
 /* total del carrito */
 .cartTotal {
-    height: 20%;
     background: var(--dg);
+    height: 20%;
     padding: 1rem;
     display: flex;
     justify-content: center;
@@ -577,6 +584,11 @@ html {
     flex-direction: column;
     border-bottom-left-radius: 1rem;
     border-bottom-right-radius: 1rem;
+}
+
+.cartTotal h3 {
+    color: var(--fn);
+    font-weight: 900;
 }
 
 .btn__buy {

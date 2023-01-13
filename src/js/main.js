@@ -23,7 +23,7 @@ let items = [
     
 ]
 
-// click del carrito para abrirlo y ocultarlo
+// click del carrito para abrirlo y ocultarlo y el modo dark y light
 {
     const iconCart = document.querySelector('.bx-shopping-bag');
     const modeLight = document.querySelector('.bx-moon');
@@ -39,6 +39,7 @@ let items = [
     const homeProducts = document.querySelector('.home__products');
     const discover = document.querySelector('.discover');
     const productDetailsImg = document.querySelector('.product__details');
+    const cartTotal = document.querySelector('.contentCart');
     
 
 
@@ -85,8 +86,10 @@ let items = [
     modeLight.addEventListener('click',function(){
         productDetailsImg.classList.toggle("color__background_dg")
     })
-    
-    console.log (productDetailsImg)
+
+    modeLight.addEventListener('click',function(){
+        cartTotal.classList.toggle("color__background_dg1")
+    })
     
 }
 
@@ -94,6 +97,8 @@ const products = document.querySelector('.product__details');
 const cartProduct = document.querySelector('.cartProduct');
 const cartTotal = document.querySelector('.cartTotal');
 const cartAmount =document.querySelector('.cartAmount');
+
+
 
 let objCart = {};
 
