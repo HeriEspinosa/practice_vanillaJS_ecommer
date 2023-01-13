@@ -23,11 +23,15 @@ let items = [
     
 ]
 
+
+
 // click del carrito para abrirlo y ocultarlo y el modo dark y light
-{
-    const iconCart = document.querySelector('.bx-shopping-bag');
-    const modeLight = document.querySelector('.bx-moon');
-    const iconX = document.querySelector('.bx-x');
+const iconCart = document.querySelector('.bx-shopping-bag');
+const modeLight = document.querySelector('.bx-moon');
+const iconX = document.querySelector('.bx-x');
+
+function darkMode(iconCart, modeLight, iconX){
+    
     const contentCart = document.querySelector(".contentCart");
     const bodyContainer = document.querySelector(".container");
     const menuStore = document.querySelector(".menu-home-store");
@@ -91,7 +95,10 @@ let items = [
         cartTotal.classList.toggle("color__background_dg1")
     })
     
-}
+    localStorage.setItem("objCart", JSON.stringify(objCart));
+};
+
+darkMode(iconCart, modeLight, iconX);
 
 const products = document.querySelector('.product__details');
 const cartProduct = document.querySelector('.cartProduct');
@@ -101,6 +108,8 @@ const cartAmount =document.querySelector('.cartAmount');
 
 items = JSON.parse(localStorage.getItem("items")) || items;
 let objCart = JSON.parse(localStorage.getItem("objCart")) || {};
+
+printProductsInCart();
 
 function searchProduct(id){
     return items.find(function(item){
