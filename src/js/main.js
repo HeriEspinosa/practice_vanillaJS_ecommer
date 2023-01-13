@@ -35,12 +35,16 @@ let items = [
     const homeDetails = document.querySelector(".home__details-item");
     const footer = document.querySelector('.footer');
     const footerSocial = document.querySelector('.footer__information-social');
+    const footerBottom = document.querySelector('.footer__bottom');
+    const homeProducts = document.querySelector('.home__products');
+    const discover = document.querySelector('.discover');
+    const productDetailsImg = document.querySelector('.product__details');
+    
 
 
     iconX.addEventListener('click', () => {
         contentCart.classList.toggle("contentCart__show")
     })
-
     iconCart.addEventListener('click',function(){
         contentCart.classList.toggle("contentCart__show")
     })
@@ -61,11 +65,28 @@ let items = [
         homeDetails.classList.toggle("color__fonts")
     })
     modeLight.addEventListener('click',function(){
-        footer.classList.toggle("color__fontsS")
+        footer.classList.toggle("color__background1")
+    })
+    modeLight.addEventListener('click',function(){
+        footerBottom.classList.toggle("color__background1")
+    })
+    modeLight.addEventListener('click',function(){
+        footer.classList.toggle("color__fonts")
     })
     modeLight.addEventListener('click',function(){
         footerSocial.classList.toggle("color__fontsI")
     })
+    modeLight.addEventListener('click',function(){
+        homeProducts.classList.toggle("color__background2")
+    })
+    modeLight.addEventListener('click',function(){
+        discover.classList.toggle("color__background2")
+    })
+    modeLight.addEventListener('click',function(){
+        productDetailsImg.classList.toggle("color__background_dg")
+    })
+    
+    console.log (productDetailsImg)
     
 }
 
@@ -73,7 +94,6 @@ const products = document.querySelector('.product__details');
 const cartProduct = document.querySelector('.cartProduct');
 const cartTotal = document.querySelector('.cartTotal');
 const cartAmount =document.querySelector('.cartAmount');
-
 
 let objCart = {};
 

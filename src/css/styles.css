@@ -13,6 +13,7 @@
     --z2: 3000;
     --z3: 10000;
     --dg: linear-gradient(180deg, rgba(17,43,60,1) 25%, rgba(23,99,2,1) 100%);
+    --dg1: linear-gradient(180deg, rgba(17,43,60,1) 25%, rgba(0,129,180,1) 100%);
 }
 
 * {
@@ -172,7 +173,7 @@ html {
     width: 6.5rem;
 }
 
-.home__details-item-buttons button:nth-child(1) {
+.discover{
     background-color: var(--fn2);
     border: #474E68;
     height: 2.8rem;
@@ -352,17 +353,23 @@ html {
 
 .color__background {
     background-color: var(--bg2);
-     /* container, */
 }
-.color__fonts {
-    color: var(--fn3);
-    font-weight: 600;
-    /* container, menu-home-store, navbar__menu-option, home__details-item, */
+.color__background1 {
+    background-color: var(--fn1);
+}
+.color__background2 {
+    background: var(--color2);
+}
+.color__background_dg > section {
+    background: var(--dg1);
 }
 
+
+.color__fonts,
 .color__fontsS p,
 .color__fontsA a > p,
-.color__fontsI i {
+.color__fontsI i,
+.color__fonts section p{
     color: var(--fn3);
     font-weight: 600;
 }
@@ -375,6 +382,7 @@ html {
     text-decoration: none;
     text-shadow: -1px 2px 2px lightgrey;
 }
+
 
 
 /* -----------css javascript------------- */
